@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#f4f6f8;
+    background: linear-gradient(
+         120deg,
+        #0f0f1a,
+        #c60d60,
+        #14142b,
+        #1a0f2e,
+        #2a0f3d,
+        #ff4d9d
+    );
+    background-size: 300% 300%;
+    animation: neonFlow 14s ease-in-out infinite;
+    overflow: hidden;
+}
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.github-app{
+    transition: opacity 0.3s ease;
+}
+.search-bar{
+    display: flex;
+    margin : 20px;
+    gap : 10px;
+    padding : 14px 18px;
+    width: min(90vw, 600px);
+    flex:1;
+    min-width: 250px;
+    
+    background-color: rgb(41, 2, 62);
+    border: 2px solid black;
+    border-radius: 40px;
+    box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.35),
+    0 0 60px rgb(198, 21, 101);
+}
+.search-bar input{
+    flex: 1 1 auto;
+    min-width : 0;
+    padding : 12px 14px;
+    font-size: 16px;
+    border : 1px solid #ccc;
+    border-radius: 8px;
+    outline : none;
+}
+
+#searchBtn{
+    flex: 0 0 auto;
+    padding : 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+} 
+#searchBtn:hover{
+    background-color: green;
+}
+
+/* Adding styling to profile card */
+.profile-card{
+    margin-top: 25px;
+    padding : 20px;
+    background-color: #111827;
+    border-radius: 18px;
+    color:#ffffff;
+    gap : 10px;
+}
+.profile-card img{
+    width : 110px;
+
+    border-radius: 50%;
+}
+
+.profile-card h2{
+    margin : 12px 0 6px;
+}
+
+.profile-card p{
+    font-size: 14px;
+}
+.profile-card a{
+    color: #ff4d9d;
+}
+
+/* Adding styling to loading icon */
+.loader{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+.spinner{
+    height : 40px;
+    width : 40px;
+    border: 4px solid rgba(180, 180, 180, 0.4);
+    border-top: 4px solid #9ca3af;
+    border-radius: 50%;
+    animation : spin 1s linear infinite;
+
+}
+@keyframes spin{
+    to{
+        transform: rotate(360deg);
+    }
+}
+.github-app.loading-state > *:not(.loader){
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Adding styling to error */
+.error{
+    color : rgb(255, 255, 255);
+    text-align: center;
+    font-size: 25px;
+}
+/* Adding styling to repo */
+.repo-section{
+    margin-top : 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.repo-section h3{
+    font-size : 20px;
+    margin-bottom: 10px;
+    color : #ff4d9d;
+    text-decoration: underline;
+}
+
+.repo-list{
+    list-style: none;
+    padding: 0;
+}
+
+.repo-item{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.repo-item a{
+    color : #e5e7eb;
+    text-decoration: none;
+}
+
+.repo-item a:hover{
+    text-decoration: underline;
+}
+
+.repo-date{
+    color : white;
+    font-weight: bold;
+    opacity : 0.8;
+    font-size: 14px;
+}
